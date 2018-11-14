@@ -1,0 +1,105 @@
+<!doctype html>  
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title >Vue js</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="style.css">
+      <style>
+          .p{
+              font-size:100px;
+          }
+          .section {
+            text-align: center;
+            width: 80%;
+            margin: auto;
+        }
+        div#demo {
+            width: 100%;
+            margin: auto;
+        }
+        .container-fluid {
+            margin-top: 100px;
+        }
+      </style>
+      <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+   </head>
+   <body>
+        <nav class="navbar navbar-expand-lg  fixed-top navbar-light bg-light shadow">
+                <a class="navbar-brand" href="index.html">
+                        <img src="images/vue_logo.jpg" width="30" height="30" alt=""> Vue.js
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="class.html">Class and Style Binding</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="compute.html">Computed
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="conditional.html">Conditional</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="list.html">List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="event.html">Event</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="form.html">Form Inputs </a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="component.html">Components </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="container-fluid">
+                    <div class="row">
+                        <div id="demo">
+                            <div class="section">    
+                                <h1 style="font-size:60px;">Testing Event </h1>
+                                    <button v-on:click="counter += 1">Add 1</button>
+                                    <p style="font-size:40px;"> The button above has been clicked {{ counter }} times.</p>
+                                    <h1 style="font-size:60px;margin-top:10px;">Testing Event with methods</h1>
+                                    <button v-on:click="say('Hello')">Say Hello</button>
+                                    <button v-on:click="say('Good AfterNoon')">Say Good Afternoon</button> 
+                                    <h1 style="font-size:60px;margin-top:10px;">Testing Mouse over Event</h1>
+                                    <p v-show="active" style="font-size:60px;color:red;">Show</p>
+                                    <div @mouseover="mouseOver" style="font-size:40px;">Hover over me!</div>     
+                            </div>
+                        </div>
+                    </div>
+              </div>
+              <script>
+                    var vm = new Vue({
+                        el: '#demo',
+                        data: {
+                            counter: 0,
+                            active: false
+                        },
+                        methods: {
+                            say: function (message) {
+                            alert(message)
+                            },
+                            mouseOver: function(){
+                                this.active = !this.active;   
+                            }
+                        }
+                    });
+               </script>
+        </body>
+    </html>

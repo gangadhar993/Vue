@@ -1,0 +1,39 @@
+nav.navbar.navbar-expand-lg.fixed-top.navbar-light.bg-light {
+    background-color: #41b883 !important;
+}
+
+a.navbar-brand {
+    color: white !important;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #fff !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.carousal_container {
+    margin-top: 88px;
+    top: 15%;
+    text-align: center;
+    position: absolute;
+    left: 15%;
+    right: 15%;
+}
+
+.img_section {
+    position: absolute;
+    top: 20%;
+    left: 28%;
+}
+
+h1.head_text {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    font-size: 61px;
+    color: #505653;
+}
